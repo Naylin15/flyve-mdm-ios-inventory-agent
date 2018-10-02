@@ -1,5 +1,5 @@
 require 'fastlane/action'
-require_relative '../helper/test_report_helper'
+# require_relative '../helper/test_report_helper'
 require "erb"
 require "rexml/document"
 
