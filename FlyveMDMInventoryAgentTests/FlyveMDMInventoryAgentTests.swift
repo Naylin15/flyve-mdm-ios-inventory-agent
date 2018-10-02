@@ -97,7 +97,7 @@ class FlyveMDMInventoryAgentTests: XCTestCase {
         ]
 
         Alamofire.request(server, method: .post, parameters: [:], encoding: xml, headers: headers)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 400..<300)
             .responseString { response in
 
                 switch response.result {
