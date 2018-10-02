@@ -11,7 +11,7 @@ module Fastlane
 
         include REXML
 
-        file = File.new(File.expand_path("fastlane/test_output/report.xml"))
+        file = File.new(File.expand_path(params[:report_path]))
         doc = Document.new(file)
 
         template = '---
@@ -82,7 +82,7 @@ layout: testReport
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :path,
+          FastlaneCore::ConfigItem.new(key: :report_path,
                                   env_name: "TEST_REPORT_PATH",
                                description: "Path to the test report",
                              default_value: 'fastlane/test_output/report.xml')
