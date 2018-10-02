@@ -11,7 +11,7 @@ module Fastlane
 
         include REXML
 
-        file = File.new(File.expand_path(params[:path]))
+        file = File.new(File.expand_path("fastlane/test_output/report.xml"))
         doc = Document.new(file)
 
         template = '---
