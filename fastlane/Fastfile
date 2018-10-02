@@ -31,6 +31,9 @@ platform :ios do
       clean: true,
       code_coverage: true
     )
+
+    test_report
+
   end
 
   desc "Run code coverage with xcov"
