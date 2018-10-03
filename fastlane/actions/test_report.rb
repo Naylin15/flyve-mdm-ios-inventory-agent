@@ -1,17 +1,16 @@
 require 'fastlane/action'
 # require_relative '../helper/test_report_helper'
-require "erb"
-require "rexml/document"
 
 module Fastlane
   module Actions
     class TestReportAction < Action
       def self.run(params)
         UI.message("The test_report plugin is working!")
-
+        require "erb"
+        require "rexml/document"
         include REXML
 
-        file = File.new(File.expand_path(params[:report_path]))
+        file = File.new(File.expand_path(params([:report_path])))
         doc = Document.new(file)
         template = '---
 layout: testReport
@@ -84,7 +83,7 @@ layout: testReport
           FastlaneCore::ConfigItem.new(key: :report_path,
                                   env_name: "TEST_REPORT_PATH",
                                description: "Path to the test report",
-                             default_value: 'fastlane/test_output/report.xml')
+                             default_value: 'test_output/report.xml')
         ]
       end
 
