@@ -9,8 +9,8 @@ module Fastlane
         require "erb"
         require "rexml/document"
         include REXML
-
-        file = File.read(File.expand_path(params([:report_path])))
+        File.rename("test_output/report.junit", "test_output/report.xml")
+        file = File.read(File.expand_path(params[:report_path]))
         doc = Document.new(file)
         template = '---
 layout: testReport
@@ -55,7 +55,7 @@ layout: testReport
 
         result = ERB.new(template).result(binding())
 
-        open('test-report/index.html', 'w') do |f|
+        open('fastlane/test_output/index.html', 'w') do |f|
           f.puts result
         end
 
