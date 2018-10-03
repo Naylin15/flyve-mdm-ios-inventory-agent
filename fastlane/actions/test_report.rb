@@ -10,7 +10,7 @@ module Fastlane
         require "rexml/document"
         include REXML
 
-        file = File.new(File.expand_path(params([:report_path])))
+        file = File.read(File.expand_path(params([:report_path])))
         doc = Document.new(file)
         template = '---
 layout: testReport
