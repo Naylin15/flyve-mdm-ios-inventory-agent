@@ -13,7 +13,6 @@ module Fastlane
 
         file = File.new(File.expand_path(params[:report_path]))
         doc = Document.new(file)
-
         template = '---
 layout: testReport
 ---
