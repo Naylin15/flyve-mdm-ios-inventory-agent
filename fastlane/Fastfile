@@ -31,7 +31,6 @@ platform :ios do
       clean: true,
       code_coverage: true
     )
-
     test_report
 
   end
