@@ -98,7 +98,7 @@ layout: testReport
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :path,
+          FastlaneCore::ConfigItem.new(key: :report_path,
                                   env_name: "TEST_REPORT_PATH",
                                description: "Path to the test report",
                              default_value: './fastlane/test_output/report.xml')
