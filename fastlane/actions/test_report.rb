@@ -52,7 +52,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :template_path,
                                   env_name: "TEMPLATE_PATH",
                                description: "Path to the template",
-                             default_value: './template/template.erb')
+                                      type: String)
         ]
       end
 
