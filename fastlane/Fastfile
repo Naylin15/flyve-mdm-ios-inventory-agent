@@ -31,7 +31,9 @@ platform :ios do
       clean: true,
       code_coverage: true
     )
-    test_report
+    test_report(
+      template_path: "./template/template.erb"
+    )
 
   end
 
