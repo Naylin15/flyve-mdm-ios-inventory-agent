@@ -29,12 +29,9 @@ platform :ios do
       workspace: ENV["XCODE_WORKSPACE"],
       scheme: ENV["XCODE_SCHEME"],
       clean: true,
-      code_coverage: true,
-      fail_build: false
+      code_coverage: true
     )
-    test_report(
-      template_path: "./fastlane/template/template.erb"
-    )
+    test_report
 
   end
 
